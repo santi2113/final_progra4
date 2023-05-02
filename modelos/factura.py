@@ -14,3 +14,9 @@ class Factura:
         for producto, cantidad in self.productos:
             print(f"{producto.nombre} x{cantidad}: ${producto.valor}")
         print(f"Total: ${self.total}")
+
+    def cantidad_total_productos(self):
+        cantidad_total = 0
+        for producto, cantidad in self.productos:
+            cantidad_total += cantidad
+        return cantidad_total
