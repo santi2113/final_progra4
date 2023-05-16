@@ -3,20 +3,26 @@ class Factura:
         self.cliente = cliente
         self.productos = []
         self.total = 0
+        self.id = None
 
     def agregar_producto(self, producto, cantidad):
         self.productos.append((producto, cantidad))
-        self.total += float(producto.valor) * cantidad
+        self.calcular_total()
+
+    def calcular_total(self):
+        self.total = sum(producto.precio * cantidad for producto, cantidad in self.productos)
+
 
     def imprimir_factura(self):
-        print(f"Cliente: {self.cliente.nombre}")
+        print("Cliente:", self.cliente.nombre)
         print("Productos:")
         for producto, cantidad in self.productos:
-            print(f"{producto.nombre} x{cantidad}: ${producto.valor}")
-        print(f"Total: ${self.total}")
+            print("- Nombre:", producto.nombre)
+            print("  Cantidad:", cantidad)
+        print("Total:", self.total)
 
     def cantidad_total_productos(self):
-        cantidad_total = 0
+        total = 0
         for producto, cantidad in self.productos:
-            cantidad_total += cantidad
-        return cantidad_total
+            total += cantidad
+        return total
