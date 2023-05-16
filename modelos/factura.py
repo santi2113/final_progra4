@@ -1,9 +1,11 @@
+import uuid
+
 class Factura:
     def __init__(self, cliente):
         self.cliente = cliente
         self.productos = []
         self.total = 0
-        self.id = None
+        self.factura_id = str(uuid.uuid4())
 
     def agregar_producto(self, producto, cantidad):
         self.productos.append((producto, cantidad))

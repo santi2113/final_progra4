@@ -22,8 +22,8 @@ cliente2 = crud.crear_cliente(2, "Cliente 2", "Direccion 2", "987654321")
 
 
 # Crear algunas Facturas
-factura1 = crud.crear_factura(cliente1.id)
-factura2 = crud.crear_factura(cliente2.id)
+factura1 = crud.crear_factura(cliente1.cliente_id)
+factura2 = crud.crear_factura(cliente2.cliente_id)
 
 # Agregar productos a las facturas
 productos_factura1 = [(antibiotico1, 2), (plaga1, 1)]
@@ -42,10 +42,14 @@ print("Factura 2:")
 factura2.imprimir_factura()
 
 # Actualizar un cliente
-crud.actualizar_cliente(cliente1.id, "Nuevo Nombre", "Nueva Direccion", "987654321")
+crud.actualizar_cliente(cliente1.cliente_id, "Nuevo Nombre", "Nueva Direccion", "987654321")
 
 # Eliminar un fertilizante
 crud.eliminar_fertilizante("F001")
 
 # Eliminar una factura
 crud.eliminar_factura(factura2.id)
+
+crud.actualizar_cliente(1, "santiago" , "asdasd", 23123423)
+
+print(crud.buscar_cliente(1))

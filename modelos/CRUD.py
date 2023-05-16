@@ -15,8 +15,7 @@ class ProductoCRUD:
         self.facturas = []
         self.productos = []
 
-    def generar_id_factura():
-        return str(uuid.uuid4())
+
     def crear_antibiotico(self, codigo, nombre, tipo, precio, dosis, duracion):
         antibiotico = Antibiotico(codigo, nombre, tipo, precio, dosis, duracion)
         self.antibioticos.append(antibiotico)
@@ -32,8 +31,8 @@ class ProductoCRUD:
         self.fertilizantes.append(fertilizante)
         return fertilizante
 
-    def crear_cliente(self, id, nombre, direccion, telefono):
-        cliente = Cliente(id, nombre, direccion, telefono)
+    def crear_cliente(self, cliente_id, nombre, direccion, telefono):
+        cliente = Cliente(cliente_id, nombre, direccion, telefono)
         self.clientes.append(cliente)
         return cliente
 
@@ -66,13 +65,13 @@ class ProductoCRUD:
 
     def buscar_cliente(self, cliente_id):
         for cliente in self.clientes:
-            if cliente.id == cliente_id:
+            if cliente.cliente_id == cliente_id:
                 return cliente
         return None
 
     def buscar_factura(self, factura_id):
         for factura in self.facturas:
-            if factura.id == factura_id:
+            if factura.factura_id == factura_id:
                 return factura
         return None
 
@@ -85,11 +84,10 @@ class ProductoCRUD:
         factura.calcular_total()
         return True
 
-    def actualizar_cliente(self, cliente_telefono, nombre, direccion, telefono):
-        cliente = self.buscar_cliente(cliente_telefono)
+    def actualizar_cliente(self, cliente_id, nombre, direccion, telefono):
+        cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
-            return False
-
+            return False and print("no se encontro el cliente")
         cliente.nombre = nombre
         cliente.direccion = direccion
         cliente.telefono = telefono
