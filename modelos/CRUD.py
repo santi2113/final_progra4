@@ -14,6 +14,7 @@ class ProductoCRUD:
         self.clientes = []
         self.facturas = []
         self.productos = []
+        self.cliente_num = 1
 
 
     def crear_antibiotico(self, codigo, nombre, tipo, precio, dosis, duracion):
@@ -32,12 +33,15 @@ class ProductoCRUD:
         return fertilizante
 
     def crear_cliente(self, cliente_id, nombre, direccion, telefono):
+        cliente_nombre = f"cliente{self.cliente_num}"
         cliente = Cliente(cliente_id, nombre, direccion, telefono)
-        self.clientes.append(cliente)
-        return cliente
+        setattr(self, cliente_nombre, cliente)  # Guardar el cliente en un atributo dinámico
+        self.clientes.append(cliente_nombre)  # Agregar el nombre del cliente a la lista de clientes
+        self.cliente_num += 1
+        return cliente_nombre
 
-    def crear_factura(self, cliente_id):
-        cliente = self.buscar_cliente(cliente_id)
+    def crear_factura(self, cliente_nombre):
+        cliente = self.buscar_cliente(cliente_nombre)
         if cliente is None:
             return None
 
@@ -62,9 +66,9 @@ class ProductoCRUD:
                 return producto
         return None
 
-
     def buscar_cliente(self, cliente_id):
-        for cliente in self.clientes:
+        for cliente_nombre in self.clientes:
+            cliente = getattr(self, cliente_nombre)
             if cliente.cliente_id == cliente_id:
                 return cliente
         return None
@@ -88,6 +92,7 @@ class ProductoCRUD:
         cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
             return False and print("no se encontro el cliente")
+        cliente.cliente_id = cliente_id
         cliente.nombre = nombre
         cliente.direccion = direccion
         cliente.telefono = telefono
@@ -117,7 +122,6 @@ class ProductoCRUD:
         self.facturas.remove(factura)
         return True
 
-    def eliminar_facturas_cliente(self, cliente):
-        facturas_cliente = [factura for factura in self.facturas if factura.cliente == cliente]
-        self.facturas = [factura for factura in self.facturas if factura not in facturas_cliente]
+    def eliminar_facturas_cliente(self, cliente_id):
+        self.facturas = [factura for factura in self.facturas if factura.cliente.cliente_id != cliente_id]
 

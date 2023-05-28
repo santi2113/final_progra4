@@ -1,6 +1,7 @@
 
 from modelos.CRUD import ProductoCRUD
 
+
 # Crear una instancia de ProductoCRUD
 crud = ProductoCRUD()
 
@@ -48,8 +49,13 @@ crud.actualizar_cliente(cliente1.cliente_id, "Nuevo Nombre", "Nueva Direccion", 
 crud.eliminar_fertilizante("F001")
 
 # Eliminar una factura
-crud.eliminar_factura(factura2.id)
+crud.eliminar_factura(factura2)
+crud.eliminar_factura(factura1)
 
 crud.actualizar_cliente(1, "santiago" , "asdasd", 23123423)
 
 print(crud.buscar_cliente(1))
+
+factura2.imprimir_factura()
+print(123)
+factura1.imprimir_factura()
