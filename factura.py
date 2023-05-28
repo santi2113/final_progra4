@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(792, 600)
+        MainWindow.resize(792, 353)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
@@ -42,10 +42,10 @@ class Ui_MainWindow(object):
         self.textBrowser_3.setGeometry(QtCore.QRect(150, 160, 121, 31))
         self.textBrowser_3.setObjectName("textBrowser_3")
         self.mostrar_cliente_factura = QtWidgets.QLabel(self.centralwidget)
-        self.mostrar_cliente_factura.setGeometry(QtCore.QRect(590, 170, 47, 13))
+        self.mostrar_cliente_factura.setGeometry(QtCore.QRect(590, 170, 151, 16))
         self.mostrar_cliente_factura.setObjectName("mostrar_cliente_factura")
         self.mostrar_total_factura = QtWidgets.QLabel(self.centralwidget)
-        self.mostrar_total_factura.setGeometry(QtCore.QRect(590, 210, 47, 13))
+        self.mostrar_total_factura.setGeometry(QtCore.QRect(590, 210, 131, 16))
         self.mostrar_total_factura.setObjectName("mostrar_total_factura")
         self.mostrar_productos_factura = QtWidgets.QLabel(self.centralwidget)
         self.mostrar_productos_factura.setGeometry(QtCore.QRect(530, 260, 211, 91))

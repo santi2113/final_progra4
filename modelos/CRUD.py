@@ -40,8 +40,8 @@ class ProductoCRUD:
         self.cliente_num += 1
         return cliente_nombre
 
-    def crear_factura(self, cliente_nombre):
-        cliente = self.buscar_cliente(cliente_nombre)
+    def crear_factura(self, cliente_id):
+        cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
             return None
 
@@ -73,11 +73,15 @@ class ProductoCRUD:
                 return cliente
         return None
 
+
+
     def buscar_factura(self, factura_id):
+        factura_ret = None
         for factura in self.facturas:
             if factura.factura_id == factura_id:
-                return factura
-        return None
+                factura_ret = factura
+                break
+        return factura_ret
 
     def actualizar_factura(self, factura_id, productos):
         factura = self.buscar_factura(factura_id)
@@ -88,14 +92,13 @@ class ProductoCRUD:
         factura.calcular_total()
         return True
 
-    def actualizar_cliente(self, cliente_id, nombre, direccion, telefono):
+    def actualizar_cliente(self, cliente_id, nombre):
         cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
             return False and print("no se encontro el cliente")
         cliente.cliente_id = cliente_id
         cliente.nombre = nombre
-        cliente.direccion = direccion
-        cliente.telefono = telefono
+
         return True
 
     def eliminar_fertilizante(self, codigo):

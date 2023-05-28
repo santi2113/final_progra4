@@ -62,6 +62,7 @@ class ClientesWindow(QMainWindow):
             self.ui.recibe_cedula_eliminar.clear()
 
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     clientesWindow = ClientesWindow()

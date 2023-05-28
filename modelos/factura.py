@@ -1,11 +1,11 @@
-import uuid
+import random
 
 class Factura:
     def __init__(self, cliente):
         self.cliente = cliente
         self.productos = []
         self.total = 0
-        self.factura_id = str(uuid.uuid4())
+        self.factura_id = random.randint(0, 1000)
 
     def agregar_producto(self, producto, cantidad):
         self.productos.append((producto, cantidad))
