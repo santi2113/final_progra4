@@ -32,12 +32,12 @@
      <rect>
       <x>220</x>
       <y>220</y>
-      <width>47</width>
-      <height>13</height>
+      <width>71</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>4 dias</string>
+     <string>2024-06-30</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -115,7 +115,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>17999</string>
+     <string>10099</string>
     </property>
    </widget>
    <widget class="QPushButton" name="comprar">
@@ -167,7 +167,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PL001</string>
+     <string>F001</string>
     </property>
    </widget>
    <widget class="QLabel" name="nombre_cliente_3">
@@ -180,7 +180,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Frecuencia 1</string>
+     <string>Mensual</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
@@ -206,7 +206,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Frecuencia 2</string>
+     <string>año</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser_3">
@@ -292,7 +292,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>Frecuencia 1</string>
+     <string>año</string>
     </property>
    </widget>
    <widget class="QLabel" name="nombre_cliente_11">
@@ -305,7 +305,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>Plaga 1</string>
+     <string>Fertilizante 2</string>
     </property>
    </widget>
    <widget class="QLabel" name="nombre_cliente_18">
@@ -318,7 +318,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>12 dias</string>
+     <string>2025-09-24</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
@@ -348,7 +348,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>19999</string>
+     <string>11099</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser_4">
@@ -378,7 +378,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>Plaga 2</string>
+     <string>Fertilizante 1</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="recibe_cantidad_2">
@@ -417,7 +417,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>PL002</string>
+     <string>F002</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -482,7 +482,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>Plaga 1</string>
+     <string>Fertilizante</string>
     </property>
    </widget>
    <widget class="QLabel" name="nombre_cliente_4">
@@ -495,7 +495,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>10999</string>
+     <string>19999</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -521,7 +521,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>PL001</string>
+     <string>F003</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -594,12 +594,12 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>220</x>
       <y>340</y>
-      <width>47</width>
-      <height>13</height>
+      <width>81</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>7 dias</string>
+     <string>2023-07-30</string>
     </property>
    </widget>
   </widget>
