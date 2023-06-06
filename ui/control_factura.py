@@ -1,7 +1,7 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from factura import Ui_MainWindow
-from modelos.CRUD import ProductoCRUD
+from PyQt5.QtWidgets import QMainWindow
+
+from ui.factura import Ui_MainWindow
+
 
 class FacturaWindow(QMainWindow):
     def __init__(self, ProductoCRUD):
@@ -30,8 +30,9 @@ class FacturaWindow(QMainWindow):
             factura_encontrada = self.productoCRUD.buscar_factura(factura_id)
 
             if factura_encontrada:
+                total = factura_encontrada.calcular_total()
                 self.ui.mostrar_cliente_factura.setText(factura_encontrada.cliente.cliente_id)
-                self.ui.mostrar_total_factura.setText(str(factura_encontrada.total))
+                self.ui.mostrar_total_factura.setText(str(total))
                 self.ui.mostrar_productos_factura.setText(str(factura_encontrada.productos))
             else:
                 self.ui.mostrar_cliente_factura.setText("Factura no encontrada")

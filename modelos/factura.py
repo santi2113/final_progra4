@@ -12,7 +12,9 @@ class Factura:
         self.calcular_total()
 
     def calcular_total(self):
-        self.total = sum(producto.precio * cantidad for producto, cantidad in self.productos)
+
+        self.total = sum(producto.precio * int(cantidad) for producto, cantidad in self.productos)
+        return self.total
 
 
     def imprimir_factura(self):

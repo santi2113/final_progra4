@@ -1,12 +1,10 @@
-
-from modelos.CRUD import ProductoCRUD
-
+from Crud.CRUD import ProductoCRUD
 
 # Crear una instancia de ProductoCRUD
 crud = ProductoCRUD()
 
 antibiotico1 = crud.crear_antibiotico("L001","Antibiotico 1", "Tipo 1", 15000,  "2 veces al día", "15 días", )
-antibiotico2 = crud.crear_antibiotico("L001","Antibiotico 2", "Tipo 2",  15000, "3 veces al día","10 días",)
+antibiotico2 = crud.crear_antibiotico("L002","Antibiotico 2", "Tipo 2",  15000, "3 veces al día","10 días",)
 
 plaga1 = crud.crear_plaga("PL001", "Plaga 1", "Frecuencia 1", 10999, "Periodo 1")
 plaga2 = crud.crear_plaga("PL002", "Plaga 2", "Frecuencia 2", 11999, "Periodo 2")

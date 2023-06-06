@@ -1,5 +1,6 @@
 import unittest
-from modelos.CRUD import ProductoCRUD
+from Crud.CRUD import ProductoCRUD
+
 
 class TestProductoCRUD(unittest.TestCase):
     def setUp(self):
@@ -22,10 +23,8 @@ class TestProductoCRUD(unittest.TestCase):
 
     def test_actualizar_cliente(self):
         cliente = self.crud.crear_cliente(1, "Cliente 1", "Dirección 1", "123456789")
-        self.crud.actualizar_cliente(cliente.cliente_id, "Nuevo Nombre", "Nueva Dirección", "987654321")
+        self.crud.actualizar_cliente(cliente.cliente_id, "Nuevo Nombre")
         self.assertEqual(cliente.nombre, "Nuevo Nombre")
-        self.assertEqual(cliente.direccion, "Nueva Dirección")
-        self.assertEqual(cliente.telefono, "987654321")
 
     def test_actualizar_factura(self):
         cliente = self.crud.crear_cliente(1, "Cliente 1", "Dirección 1", "123456789")

@@ -3,7 +3,6 @@ from modelos.cliente import Cliente
 from modelos.factura import Factura
 from modelos.fertilizante import Fertilizante
 from modelos.plaga import Plaga
-import uuid
 
 
 class ProductoCRUD:
@@ -36,9 +35,9 @@ class ProductoCRUD:
         cliente_nombre = f"cliente{self.cliente_num}"
         cliente = Cliente(cliente_id, nombre, direccion, telefono)
         setattr(self, cliente_nombre, cliente)  # Guardar el cliente en un atributo dinámico
-        self.clientes.append(cliente_nombre)  # Agregar el nombre del cliente a la lista de clientes
+        self.clientes.append(cliente)  # Agregar el nombre del cliente a la lista de clientes
         self.cliente_num += 1
-        return cliente_nombre
+        return cliente
 
     def crear_factura(self, cliente_id):
         cliente = self.buscar_cliente(cliente_id)
@@ -67,13 +66,10 @@ class ProductoCRUD:
         return None
 
     def buscar_cliente(self, cliente_id):
-        for cliente_nombre in self.clientes:
-            cliente = getattr(self, cliente_nombre)
+        for cliente in self.clientes:
             if cliente.cliente_id == cliente_id:
                 return cliente
         return None
-
-
 
     def buscar_factura(self, factura_id):
         factura_ret = None
@@ -96,7 +92,7 @@ class ProductoCRUD:
         cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
             return False and print("no se encontro el cliente")
-        cliente.cliente_id = cliente_id
+
         cliente.nombre = nombre
 
         return True
@@ -108,13 +104,14 @@ class ProductoCRUD:
             print("Fertilizante eliminado.")
         else:
             print("No se encontró el fertilizante con el código proporcionado.")
+
     def eliminar_cliente(self, cliente_id):
         cliente = self.buscar_cliente(cliente_id)
         if cliente is None:
             return False
 
         self.clientes.remove(cliente)
-        self.eliminar_facturas_cliente(cliente)
+        self.eliminar_facturas_cliente(cliente_id)
         return True
 
     def eliminar_factura(self, factura_id):

@@ -1,8 +1,8 @@
 import sys
+
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from cliente import Ui_Form
-from modelos.CRUD import ProductoCRUD
+from ui.cliente import Ui_Form
 
 
 class ClientesWindow(QMainWindow):

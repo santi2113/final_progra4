@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>792</width>
-    <height>353</height>
+    <width>519</width>
+    <height>541</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -156,10 +156,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="mostrar_productos_factura">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>260</y>
-      <width>211</width>
-      <height>91</height>
+      <x>120</x>
+      <y>290</y>
+      <width>951</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -353,7 +353,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>792</width>
+     <width>519</width>
      <height>21</height>
     </rect>
    </property>
